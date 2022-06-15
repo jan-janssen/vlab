@@ -9,7 +9,17 @@ RUN mamba env update -n root -f /tmp/environment.yml && \
     rm /tmp/environment.yml && \
     mamba list
 
+# Add user 
+RUN useradd \
+    --comment "Default user" \
+    --create-home \
+    --shell /bin/bash \
+    --uid 1000 \
+    janssen
+
+USER janssen
+
 # Configure container startup as root
-WORKDIR ${HOME}/
-ENTRYPOINT ["/sbin/tini", "--"]
+WORKDIR /home/janssen
+ENTRYPOINT ["tini", "--"]
 CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
