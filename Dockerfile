@@ -4,7 +4,7 @@ MAINTAINER Jan Janssen <jan.janssen@outlook.com>
 COPY . ${HOME}
 
 # Install 
-RUN micromamba env update -n root -f "${HOME}/environment.yml"
+RUN mamba env update -n root -f "${HOME}/environment.yml"
 
 # Configure container startup as root
 WORKDIR ${HOME}/
