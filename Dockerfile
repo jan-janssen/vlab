@@ -4,7 +4,7 @@ MAINTAINER Jan Janssen <jan.janssen@outlook.com>
 COPY . /tmp
 
 # Install 
-RUN mamba env update -f /tmp/environment.yml
+RUN mamba env update -n root -f /tmp/environment.yml
 
 # Configure container startup as root
 WORKDIR ${HOME}/
