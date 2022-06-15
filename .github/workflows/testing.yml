@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: docker build -t pyscioffice/vlab:latest .
+      - run: docker build -t pyscioffice/vlab:latest jupyter
       - run: docker images
