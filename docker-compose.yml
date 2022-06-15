@@ -13,7 +13,7 @@ services:
       - "5432:5432"
   jupyter:
     container_name: jupyter
-    build: .
+    build: jupyter
     ports:
       - "8888:8888"
     volumes:
