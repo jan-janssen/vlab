@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: postgres_db
+    image: postgres:14.3-alpine
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGDATA: /var/lib/postgresql/data/pgdata 
+    volumes:
+      - /tmp:/var/lib/postgresql/data 
+    ports:
+      - "5432:5432"
+  jupyter:
+    container_name: jupyter
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - /home/janssen:/home/janssen
+    depends_on:
+      - postgres
+    environment:
+      DB_HOST: postgres
+    links:
+      - postgres

@@ -3,5 +3,5 @@ For personal development using [jupyter](https://jupyter.org) and [code-server](
 
 Start with:
 ```
-docker run -i -t  -v /home/janssen:/home/janssen -p 8888:8888 pyscioffice/vlab
+docker compose up --build
 ```
