@@ -5,7 +5,7 @@ COPY environment.yml /tmp
 
 # Install 
 RUN mamba env update -n root -f /tmp/environment.yml && \
-    mamba --all -f -y && \
+    mamba clean --all -f -y && \
     rm /tmp/environment.yml && \
     mamba list
 
