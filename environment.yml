@@ -1,0 +1,6 @@
+channels:
+  - conda-forge
+dependencies:
+  - jupyter=1.0.0
+  - code-server=4.4.0
+  - jupyter-vscode-proxy=0.1
