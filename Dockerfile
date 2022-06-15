@@ -1,4 +1,4 @@
-FROM mambaorg/micromamba:0.24-bullseye-slim
+FROM condaforge/mambaforge:4.12.0-2
 MAINTAINER Jan Janssen <jan.janssen@outlook.com>
 
 COPY . ${HOME}
