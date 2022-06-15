@@ -1,7 +1,7 @@
 FROM condaforge/mambaforge:4.12.0-2
 MAINTAINER Jan Janssen <jan.janssen@outlook.com>
 
-COPY jupyter/environment.yml /tmp
+COPY environment.yml /tmp
 
 # Install 
 RUN mamba env update -n root -f /tmp/environment.yml && \
