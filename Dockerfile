@@ -1,10 +1,10 @@
 FROM condaforge/mambaforge:4.12.0-2
 MAINTAINER Jan Janssen <jan.janssen@outlook.com>
 
-COPY . ${HOME}
+COPY . /tmp
 
 # Install 
-RUN mamba env update -f "${HOME}/environment.yml"
+RUN mamba env update -f /tmp/environment.yml
 
 # Configure container startup as root
 WORKDIR ${HOME}/
